@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap');
+
+:root{
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body,#__next{
+  height:100%;
+}
+
+body {
+  @apply bg-warm-50 text-gray-800;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: Merriweather, serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* small card appearance */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  padding: 1.25rem;
+}
+
+/* elimination animation */
+.elim {
+  transition: transform 400ms ease, opacity 400ms ease;
+}
+
+.elim.removed {
+  transform: scale(0.5) rotate(-20deg);
+  opacity: 0.06;
+}

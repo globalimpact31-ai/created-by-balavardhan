@@ -1,0 +1,187 @@
+/* Classic elegant FLAMES styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap');
+
+:root{
+  --bg: #fbfaf8;
+  --muted: #6b7280;
+  --warm-500: #dd6f41;
+  --card-bg: #ffffff;
+  --surface-shadow: 0 6px 18px rgba(15,23,42,0.06);
+}
+
+* { box-sizing: border-box; }
+html,body,#root { height: 100%; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #111827;
+  margin: 0;
+  padding: 32px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* header */
+.header { text-align: center; margin-bottom: 28px; }
+.title {
+  font-family: Merriweather, serif;
+  font-size: 2.25rem;
+  margin: 0;
+  color: #0f172a;
+}
+.lead {
+  margin-top: 8px;
+  color: var(--muted);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* card */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--surface-shadow);
+  padding: 18px;
+}
+
+/* form */
+.form-card { margin-bottom: 18px; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.field { display: block; }
+.field-label { display:block; font-size: 0.9rem; color: var(--muted); margin-bottom:6px; }
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+.input:focus {
+  box-shadow: 0 0 0 4px rgba(221,111,65,0.08);
+  border-color: rgba(221,111,65,0.8);
+}
+
+/* actions */
+.actions {
+  margin-top: 12px;
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+}
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor:pointer;
+  border: none;
+}
+.btn.primary {
+  background: var(--warm-500);
+  color: white;
+  box-shadow: 0 6px 14px rgba(221,111,65,0.18);
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #e6e9ef;
+  color: #374151;
+}
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+/* visualizer */
+.visualizer {
+  margin-top: 18px;
+}
+.viz-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.viz-title {
+  margin:0;
+  font-size: 1.05rem;
+  font-family: Merriweather, serif;
+}
+.viz-sub { margin:4px 0 0; color:var(--muted); font-size:0.9rem; }
+
+/* letters layout */
+.letters {
+  margin-top: 18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 14px;
+  justify-content:center;
+  align-items:center;
+  min-height: 84px;
+}
+.letter {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #eef2f7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .4s ease, opacity .4s ease;
+  box-shadow: 0 6px 12px rgba(2,6,23,0.04);
+}
+.letter .letter-inner {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #374151;
+  font-family: Merriweather, serif;
+}
+.letter.removed {
+  transform: scale(.5) rotate(-18deg);
+  opacity: 0.06;
+  filter: blur(1px);
+}
+
+/* final card */
+.final {
+  margin-top: 18px;
+  display:flex;
+  justify-content:center;
+}
+.final-card {
+  display:flex;
+  gap: 14px;
+  align-items:center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+.final-icon { width: 60px; height: 60px; display:flex; align-items:center; justify-content:center; }
+.final-title { font-family: Merriweather, serif; font-weight:600; font-size:1.05rem; }
+.final-sub { color: var(--muted); font-size:0.9rem; margin-top:4px; }
+
+/* footer */
+.footer {
+  margin-top: 18px;
+  text-align:center;
+  font-size: 0.85rem;
+  color: #9aa2ad;
+}
+
+/* small helpers */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+  .letter { width: 68px; height: 68px; }
+  .final-card { flex-direction: row; padding: 10px; }
+}
