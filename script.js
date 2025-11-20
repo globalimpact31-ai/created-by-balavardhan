@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // SEND NAMES TO GOOGLE SHEET (YOUR FUNCTION)
   // ==========================================
   function sendToSheet(name1, name2) {
-    fetch("https://script.google.com/macros/s/AKfycbx_XJHYtpGJqjSKxA4IFoJsqyUlr6MxKxZkmCHVAImFtC27yAQYvDK5DoSrCl4Vz_0m1A/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzSPTHO1fQYT5luaIOUhwovhArjfvqnLvQFdSjkF3-bHLSB7Ow7OKZvEpPu-iTZg3Q/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
